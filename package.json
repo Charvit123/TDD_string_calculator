@@ -1,0 +1,15 @@
+{
+  "name": "stringcalc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Calc.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
