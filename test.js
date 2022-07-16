@@ -11,6 +11,10 @@ describe("StringCalc Tests", () => {
         assert.equal(calc("1"), 1);
     });
 
+    it("should return the error for invalid input", () => {
+        assert.throws(() => calc("1,\n"), /invalid input/);
+    });
+
     it("should return the sum of comma delimited numbers", () => {
         assert.equal(calc("1,2"), 3);
     });
@@ -27,15 +31,15 @@ describe("StringCalc Tests", () => {
         assert.equal(calc("//;\n1;2;3"), 6);
     });
 
+    it("should return sum for custom delimites", () => {
+        assert.equal(calc("//*\n1*2*3"), 6);
+    });
+
     it("should throw an error on negative numbers", () => {
         assert.throws(() => calc("-1,2,-3"), /negatives not allowed -1 -3/);
     });
 
     it("should ignore numbers larger than 1000", () => {
         assert.equal(calc("1001,2,3"), 5);
-    });
-
-    it("should return the sum for mutliple custom delimiters", () => {
-        assert.equal(calc("//[*][$]\n1*2$3"), 6);
     });
 })
